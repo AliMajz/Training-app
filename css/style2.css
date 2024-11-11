@@ -1,0 +1,71 @@
+.rgb-line {
+    height: 5px;
+    background: linear-gradient(to right,#90EE90,yellow,green,#ADD8E6,blue, violet,purple);
+}
+
+.navbar-nav .nav-item .nav-link{
+  color: blue;
+}
+
+.employee-card {
+      
+    width: 600px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px ;
+    position: relative;
+    
+  }
+  .card-content {
+    display: flex;
+    
+  }
+  .employee-card img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 15px;
+    
+  }
+  .employee-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    margin-top: 5px
+  }
+  .employee-details h5 {
+    
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .employee-details p {
+    margin: 0;
+    color: #888;
+  }
+  .color-strip {
+    height: 20px;
+    width: 100%;
+    background-color: #66bb6a;
+  }
+
+  .navbar{
+    border-bottom: 2px solid grey;
+  }
+
+  .navbar .navbar-brand {
+    font-style: italic;
+
+    .color1 {color:yellowgreen;}
+    .color2 {color: yellow;}
+    .color3 {color: green;}
+    .color4 {color: lightskyblue;}
+    .color5 {color: blue;}
+    .color6 {color: violet;}
+    .color7 {color: purple;}
+  }
+
+  .navigator{
+    background-color: white!;
+  }
