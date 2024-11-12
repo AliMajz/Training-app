@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+#page-two{
+  display: none;
+}
+
 #login-page
 {
     font-family: 'Mulish', sans-serif;
@@ -114,6 +118,7 @@ a:hover {
   }
   .card-content {
     display: flex;
+    box-sizing: border-box;
     
   }
   .employee-card img {
@@ -147,10 +152,15 @@ a:hover {
 
   .navbar{
     border-bottom: 2px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
   }
 
   .navbar .navbar-brand {
     font-style: italic;
+    margin: 5px;
 
     .color1 {color:yellowgreen;}
     .color2 {color: yellow;}
@@ -169,8 +179,15 @@ a:hover {
   list-style-type: none;
 }
 
+.checkboxes .ol .ul {
+  padding-right: 2rem;
+}
+
 #employee-list{
-  width: 100%;
+    width: 100%;
+    display: flex;
+    
+
 }
 
 .col-md-2{
@@ -183,7 +200,8 @@ a:hover {
 }
 
 .col-md-10{
-  width: 100%;
+  width: 80%;
+  display: flex;
 }
 
 

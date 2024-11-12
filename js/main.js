@@ -7,11 +7,11 @@ $(document).ready(function() {
 
         // Simulate login validation
         if (username === "admin" && password === "admin") {
-            $("#loadingOverlay").show();
-            $("#loginPage").css('visibility','hidden');
+          $("#login-page").hide();
+          $("#page-two").show();
             
             setTimeout(function() {
-                window.location.href = "pageTwo.html";
+                $("#loadingOverlay").show();
             }, 1000); 
         } else {
             alert("Invalid username or password");
