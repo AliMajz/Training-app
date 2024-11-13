@@ -115,6 +115,7 @@ a:hover {
     margin-top: 20px ;
     position: relative;
     
+    
   }
   .card-content {
     display: flex;
@@ -144,6 +145,7 @@ a:hover {
     margin: 0;
     color: #888;
   }
+
   .color-strip {
     height: 20px;
     width: 100%;

@@ -17,11 +17,14 @@ $(document).ready(function() {
             alert("Invalid username or password");
         }
     });
+    createEmployeeCard('James Butt', 'Benton', 'https://via.placeholder.com/70', '#66bb6a');
+    createEmployeeCard('Josephine Darakjy', 'Chanay', 'https://via.placeholder.com/70', '#8e24aa');
+    createEmployeeCard('Art Venere', 'Chemel', 'https://via.placeholder.com/70', '#42a5f5');
 });
 
 function createEmployeeCard(name, location, imageSrc, color) {
     const card = `
-      <div class="col-md-4 d-flex ">
+      <div class="col-md-4 d-flex">
         <div class="employee-card">
           <div class="card-content">
             <img src="${imageSrc}" alt="${name}">
@@ -38,13 +41,7 @@ function createEmployeeCard(name, location, imageSrc, color) {
     $('#employee-list').append(card);
   }
 
-  // Example usage:
-  $(document).ready(function() {
-    createEmployeeCard('James Butt', 'Benton', 'https://via.placeholder.com/70', '#66bb6a');
-    createEmployeeCard('Josephine Darakjy', 'Chanay', 'https://via.placeholder.com/70', '#8e24aa');
-    createEmployeeCard('Art Venere', 'Chemel', 'https://via.placeholder.com/70', '#42a5f5');
-  });
-
+  /*
   $(document).ready(function(){
     $.ajax({
       url:'/users/get-Users',
@@ -61,6 +58,6 @@ function createEmployeeCard(name, location, imageSrc, color) {
     });
 
   });
-
+ */
 
   
