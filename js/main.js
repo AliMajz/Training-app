@@ -1,45 +1,185 @@
 $(document).ready(function() {
-    $("#loginForm").on("submit", function(event) {
-        event.preventDefault(); 
+ 
+  $("#loginForm").on("submit", function(event) {
+      event.preventDefault(); 
 
-        var username = $("#username").val();
-        var password = $("#password").val();
+      var username = $("#username").val();
+      var password = $("#password").val();
 
-        // Simulate login validation
-        if (username === "admin" && password === "admin") {
+      // Simulate login validation
+      if (username === "admin" && password === "admin") {
           $("#login-page").hide();
           $("#page-two").show();
-            
-            setTimeout(function() {
-                $("#loadingOverlay").show();
-            }, 1000); 
-        } else {
-            alert("Invalid username or password");
-        }
-    });
-    createEmployeeCard('James Butt', 'Benton', 'https://via.placeholder.com/70', '#66bb6a');
-    createEmployeeCard('Josephine Darakjy', 'Chanay', 'https://via.placeholder.com/70', '#8e24aa');
-    createEmployeeCard('Art Venere', 'Chemel', 'https://via.placeholder.com/70', '#42a5f5');
+          
+          setTimeout(function() {
+              $("#loadingOverlay").show();
+          }, 1000); 
+      } else {
+          alert("Invalid username or password");
+      }
+  });
+
+  // Array of employee data
+  const employees = [
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
+      { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
+      { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' }
+  ];
+
+  // Define the number of cards to show per page
+  const cardsPerPage = 12;
+  let currentPage = 1;
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(employees.length / cardsPerPage);
+
+  // Function to create the employee card HTML
+  function createEmployeeCard(employee) {
+      return `
+          <div class="col-md-4 d-flex">
+              <div class="employee-card">
+                  <div class="card-content">
+                      <img src="${employee.imageSrc}" alt="${employee.name}">
+                      <div class="employee-details">
+                          <h5>${employee.name}</h5>
+                          <p>${employee.location}</p>
+                      </div>
+                  </div>
+                  <div class="color-strip" style="background-color: ${employee.color};"></div>
+              </div>
+          </div>
+      `;
+  }
+
+  // Function to display the employee cards for the current page
+  function displayEmployeeCards(page) {
+      const startIndex = (page - 1) * cardsPerPage;
+      const endIndex = startIndex + cardsPerPage;
+      const currentEmployees = employees.slice(startIndex, endIndex);
+      
+      // Clear the employee list before appending new cards
+      $('#employee-list').html('');
+      
+      // Append the employee cards for the current page
+      currentEmployees.forEach(employee => {
+          $('#employee-list').append(createEmployeeCard(employee));
+      });
+
+      // Update the pagination controls
+      updatePagination(page);
+  }
+
+  // Function to update the pagination controls
+  function updatePagination(page) {
+      // Disable/enable the previous and next buttons
+      if (page === 1) {
+          $('.pagination .previous').addClass('disabled');
+      } else {
+          $('.pagination .previous').removeClass('disabled');
+      }
+
+      if (page === totalPages) {
+          $('.pagination .next').addClass('disabled');
+      } else {
+          $('.pagination .next').removeClass('disabled');
+      }
+
+      // Update the active page number
+      $('.pagination .page-item').removeClass('active');
+      $(`.pagination .page-item[data-page="${page}"]`).addClass('active');
+  }
+
+  // Event listener for pagination page number clicks
+  $(document).on('click', '.pagination .page-link', function(event) {
+      const page = $(this).data('page');
+      if (page) {
+          currentPage = page;
+          displayEmployeeCards(currentPage);
+      }
+  });
+
+  // Event listener for the 'previous' button
+  $(document).on('click', '.pagination .previous', function() {
+      if (currentPage > 1) {
+          currentPage--;
+          displayEmployeeCards(currentPage);
+      }
+  });
+
+  // Event listener for the 'next' button
+  $(document).on('click', '.pagination .next', function() {
+      if (currentPage < totalPages) {
+          currentPage++;
+          displayEmployeeCards(currentPage);
+      }
+  });
+
+  // Function to create pagination buttons dynamically
+  function createPagination() {
+      const paginationContainer = $('.pagination');
+      paginationContainer.empty();
+
+      // Previous button
+      paginationContainer.append(`
+          <li class="page-item previous">
+              <a class="page-link" href="#">Previous</a>
+          </li>
+      `);
+
+      // Page number buttons
+      for (let i = 1; i <= totalPages; i++) {
+          paginationContainer.append(`
+              <li class="page-item" data-page="${i}">
+                  <a class="page-link" href="#">${i}</a>
+              </li>
+          `);
+      }
+
+      // Next button
+      paginationContainer.append(`
+          <li class="page-item next">
+              <a class="page-link" href="#">Next</a>
+          </li>
+      `);
+  }
+
+  // Initialize the page with employee cards and pagination
+  displayEmployeeCards(currentPage);
+  createPagination();
 });
 
-function createEmployeeCard(name, location, imageSrc, color) {
-    const card = `
-      <div class="col-md-4 d-flex">
-        <div class="employee-card">
-          <div class="card-content">
-            <img src="${imageSrc}" alt="${name}">
-            <div class="employee-details">
-              <h5>${name}</h5>
-              <p>${location}</p>
-            </div>
-          </div>
-          <div class="color-strip" style="background-color: ${color};"></div>
-        </div>
-      </div>
-    `;
-    
-    $('#employee-list').append(card);
-  }
 
   /*
   $(document).ready(function(){
