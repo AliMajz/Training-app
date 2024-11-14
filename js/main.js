@@ -1,5 +1,5 @@
 $(document).ready(function() {
- 
+  // Simulate login form submission (you already have this part)
   $("#loginForm").on("submit", function(event) {
       event.preventDefault(); 
 
@@ -21,41 +21,41 @@ $(document).ready(function() {
 
   // Array of employee data
   const employees = [
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
-      { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
-      { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-      { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-      { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' }
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
+    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
+    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' }
   ];
 
   // Define the number of cards to show per page
@@ -122,9 +122,9 @@ $(document).ready(function() {
   }
 
   // Event listener for pagination page number clicks
-  $(document).on('click', '.pagination .page-link', function(event) {
+  $(document).on('click', '.pagination .page-item', function(event) {
       const page = $(this).data('page');
-      if (page) {
+      if (page && page !== currentPage) {  // Check if it's a valid page and not the current one
           currentPage = page;
           displayEmployeeCards(currentPage);
       }
@@ -179,6 +179,7 @@ $(document).ready(function() {
   displayEmployeeCards(currentPage);
   createPagination();
 });
+
 
 
   /*
