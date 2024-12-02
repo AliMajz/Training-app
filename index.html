@@ -7,6 +7,7 @@
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600&display=swap" rel="stylesheet">
@@ -95,7 +96,7 @@
                         <li><input type="checkbox" id="chanay" class="checkbox"><label for="chanay">Chanay</label></li>
                         <li><input type="checkbox" id="chemel" class="checkbox"><label for="chemel">Chemel</label></li>
                         <li><input type="checkbox" id="feltz" class="checkbox"><label for="feltz">Feltz Printing</label></li>
-                        <li><input type="checkbox" id="commercial" class="checkbox"><label for="commercial">Commercial Press</label></li>
+                        <li><input type="checkbox" id="commercial-press" class="checkbox"><label for="commercial-press">Commercial Press</label></li>
                     </ul>
                 </div>
     
@@ -103,8 +104,6 @@
                     <div id="employee-list" class="row">
                         <!-- Employee cards will be added here -->
                     </div>
-                    
-                    
                         <nav aria-label="...">
                             <ul class="pagination">
                               <li class="page-item disabled">
@@ -119,12 +118,29 @@
                                 <a class="page-link" href="#">Next</a>
                               </li>
                             </ul>
-                          </nav>
-                    
-
+                        </nav>
                 </div>
             </div>
         </div>
+
+        <!-- Modal for Employee Details -->
+            <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="employeeModalLabel">Employee Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <!-- Employee details will be inserted dynamically here -->
+                    <img id="modalEmployeeImage" class="img-fluid mb-3" alt="Employee Image">
+                    <h5 id="modalEmployeeName"></h5>
+                    <p id="modalEmployeeLocation"></p>
+                    <p id="modalEmployeeAdditionalInfo"></p> 
+                    </div>
+                </div>
+                </div>
+            </div>
     </div>
 
     

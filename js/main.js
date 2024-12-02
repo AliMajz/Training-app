@@ -19,36 +19,13 @@ $(document).ready(function() {
       }
   });
 
-  // Array of employee data
+  
   const employees = [
     { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
     { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
     { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
     { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
     { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
     { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
     { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
     { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
@@ -69,7 +46,7 @@ $(document).ready(function() {
   function createEmployeeCard(employee) {
       return `
           <div class="col-md-4 d-flex">
-              <div class="employee-card">
+              <div class="employee-card  data-company="${employee.location}">
                   <div class="card-content">
                       <img src="${employee.imageSrc}" alt="${employee.name}">
                       <div class="employee-details">
@@ -175,10 +152,57 @@ $(document).ready(function() {
       `);
   }
 
-  // Initialize the page with employee cards and pagination
-  displayEmployeeCards(currentPage);
-  createPagination();
+        // Initialize the page with employee cards and pagination
+        displayEmployeeCards(currentPage);
+        createPagination();
+        
+        $(document).on('click', '.employee-card', function() {
+            
+            const name = $(this).data('name');
+            const location = $(this).data('location');
+            const imageSrc = $(this).data('image');
+            const additionalInfo = $(this).data('additional');
+    
+            
+            $('#modalEmployeeName').text(name);
+            $('#modalEmployeeLocation').text(location);
+            $('#modalEmployeeImage').attr('src', imageSrc);
+            $('#modalEmployeeAdditionalInfo').text(additionalInfo);
+    
+           
+            $('#employeeModal').modal('show');
+        });
+
+        // Function to filter employees based on selected checkboxes
+        function filterEmployees() {
+            var selectedCompanies = [];
+            
+           
+            $('input[type="checkbox"]:checked').each(function() {
+                selectedCompanies.push($(this).val());
+            });
+
+            $('.employee-card').each(function() {
+                var company = $(this).data('company');
+            
+                if (selectedCompanies.length === 0 || selectedCompanies.includes(company)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+
+        $('input[type="checkbox"]').change(function() {
+            filterEmployees();
+        });
+
+        filterEmployees();
+
+  
 });
+
+
 
 
 

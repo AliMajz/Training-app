@@ -116,7 +116,7 @@ a:hover {
     position: relative;  
   }
 
-  .employee-card :hover{
+  .employee-card:hover{
     border: 1px solid #888;
     
   }
@@ -188,7 +188,6 @@ a:hover {
 #employee-list{
     width: 100%;
     display: flex;
-    justify-content: center;
 }
 
 .col-md-2{
