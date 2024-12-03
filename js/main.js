@@ -46,7 +46,7 @@ $(document).ready(function() {
   function createEmployeeCard(employee) {
       return `
           <div class="col-md-4 d-flex">
-              <div class="employee-card  data-company="${employee.location}">
+              <div class="employee-card" location="${employee.location}" name="${employee.name}" image="${employee.imageSrc}" color="${employee.color}">
                   <div class="card-content">
                       <img src="${employee.imageSrc}" alt="${employee.name}">
                       <div class="employee-details">
@@ -158,10 +158,10 @@ $(document).ready(function() {
         
         $(document).on('click', '.employee-card', function() {
             
-            const name = $(this).data('name');
-            const location = $(this).data('location');
-            const imageSrc = $(this).data('image');
-            const additionalInfo = $(this).data('additional');
+            const name = $(this).attr('name');
+            const location = $(this).attr('location');
+            const imageSrc = $(this).attr('image');
+            const additionalInfo = $(this).attr('additional');
     
             
             $('#modalEmployeeName').text(name);
@@ -173,36 +173,29 @@ $(document).ready(function() {
             $('#employeeModal').modal('show');
         });
 
-        // Function to filter employees based on selected checkboxes
         function filterEmployees() {
-            var selectedCompanies = [];
-            
-           
+            let selectedCompanies = [];
             $('input[type="checkbox"]:checked').each(function() {
                 selectedCompanies.push($(this).val());
             });
-
-            $('.employee-card').each(function() {
-                var company = $(this).data('company');
+    
             
-                if (selectedCompanies.length === 0 || selectedCompanies.includes(company)) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
+            $('#employee-list').html('');
+            employees.forEach(employee => {
+                if (selectedCompanies.length === 0 || selectedCompanies.includes(employee.location)) {
+                    $('#employee-list').append(createEmployeeCard(employee));
                 }
             });
         }
-
+    
         $('input[type="checkbox"]').change(function() {
             filterEmployees();
         });
-
+    
         filterEmployees();
 
-  
+
 });
-
-
 
 
 
