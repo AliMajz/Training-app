@@ -8,12 +8,16 @@ $(document).ready(function() {
 
       // Simulate login validation
       if (username === "admin" && password === "admin") {
-          $("#login-page").hide();
-          $("#page-two").show();
-          
+          $("#login-page").hide(); 
+
+          $("#loading").show();
+
           setTimeout(function() {
-              $("#loadingOverlay").show();
-          }, 1000); 
+            $("#loading").hide();
+
+             $("#page-two").show();
+        }, 2000);
+
       } else {
           alert("Invalid username or password");
       }
@@ -21,18 +25,18 @@ $(document).ready(function() {
 
   
   const employees = [
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
-    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
-    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' },
-    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' },
-    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' }
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a', address: 'via Delle Rovare 24,11'},
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa', address: 'via Donghi 34,50'},
+    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' , address: 'via Torti 45,3'},
+    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5' , address: 'De Ferrari 2,12'},
+    { name: 'Art Venere', location: 'Chemel', imageSrc: 'https://via.placeholder.com/70', color: '#42a5f5',address: 'via Delle Rovare 24,11'},
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' , address: 'via Donghi 34,50'},
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' , address: 'via Torti 45,3'},
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' , address: 'via Torti 45,3'},
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa', address: 'De Ferrari 2,12' },
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' , address: 'via Torti 45,3'},
+    { name: 'Josephine Darakjy', location: 'Chanay', imageSrc: 'https://via.placeholder.com/70', color: '#8e24aa' , address: 'De Ferrari 2,12'},
+    { name: 'James Butt', location: 'Benton', imageSrc: 'https://via.placeholder.com/70', color: '#66bb6a' , address: 'via Torti 45,3'}
   ];
 
   // Define the number of cards to show per page
@@ -161,13 +165,13 @@ $(document).ready(function() {
             const name = $(this).attr('name');
             const location = $(this).attr('location');
             const imageSrc = $(this).attr('image');
-            const additionalInfo = $(this).attr('additional');
+            const addresses = $(this).attr('address');
     
             
             $('#modalEmployeeName').text(name);
             $('#modalEmployeeLocation').text(location);
             $('#modalEmployeeImage').attr('src', imageSrc);
-            $('#modalEmployeeAdditionalInfo').text(additionalInfo);
+            $('#modalEmployeeAddress').text(addresses);
     
            
             $('#employeeModal').modal('show');
@@ -184,6 +188,21 @@ $(document).ready(function() {
             employees.forEach(employee => {
                 if (selectedCompanies.length === 0 || selectedCompanies.includes(employee.location)) {
                     $('#employee-list').append(createEmployeeCard(employee));
+                }else{
+                    $('#employee-list').html('No Employees Found !');
+
+                    $('#employee-list').css({
+                        'display': 'flex',        
+                        'justify-content': 'center', 
+                        'align-items': 'center',    
+                        'height': '100vh',          
+                        'border': '1px solid black', 
+                        'border-radius': '5px',     
+                        'padding': '20px',          
+                        'font-size': '20px',        
+                        'text-align': 'center',
+                        'margin-top': '10px'     
+                    });
                 }
             });
         }

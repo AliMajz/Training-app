@@ -29,12 +29,23 @@
 </head>
 <body>
 
+    <div id="loading">
+            <div><a class="navbar-brand" href="#" style="font-size: 2rem;">
+                    <span class="color1">i</span>
+                    <span class="color2">m</span>
+                    <span class="color3">p</span>
+                    <span class="color4">l</span>
+                    <span class="color5">i</span>
+                    <span class="color6">f</span>
+                    <span class="color7">y</span>
+                </a></div>
+        <p style="color:lightskyblue;">Making Information Simple, Tangible and Beautiful...<i class="fas fa-spinner fa-spin"></i></p>
+        
+    </div>
+
     <!-- Login Page -->
     <div id="login-page">
-        <div  id="loadingOverlay">
-            <h2>Making Information Simple...</h2>
-            <i class="fas fa-spinner fa-spin"></i>
-        </div>
+        
 
         <div class="container h-100 d-flex justify-content-center align-items-center" id="loginPage">
             <div class="row w-100 justify-content-center">
@@ -124,24 +135,44 @@
         </div>
 
         <!-- Modal for Employee Details -->
-            <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+        <div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+            <!-- Modal Dialog -->
+            <div class="modal-dialog">
+                <!-- Modal Content -->
                 <div class="modal-content">
+                    
+                    <!-- Modal Header -->
                     <div class="modal-header">
-                    <h5 class="modal-title" id="employeeModalLabel">Employee Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title" id="employeeModalLabel">Employee Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                    
+                    <!-- Modal Body -->
                     <div class="modal-body">
-                    <!-- Employee details will be inserted dynamically here -->
-                    <img id="modalEmployeeImage" class="img-fluid mb-3" alt="Employee Image">
-                    <h5 id="modalEmployeeName"></h5>
-                    <p id="modalEmployeeLocation"></p>
-                    <p id="modalEmployeeAdditionalInfo"></p> 
+                        <img id="modalEmployeeImage" class="img-fluid mb-3" alt="Employee Image">
+                        <h5 id="modalEmployeeName"></h5>
+                        <p id="modalEmployeeLocation"></p>
+                        <p id="modalEmployeeAddress"></p>
                     </div>
-                </div>
-                </div>
-            </div>
-    </div>
+                
+                    <div class="modal-footer d-flex justify-content-between">
+                        
+                        <div class="d-flex justify-content-start">
+                            <button id="addEmployeeBtn" class="btn btn-success me-2">Share</button>
+                            <button id="sendEmployeeBtn" class="btn btn-secondary me-2">Send</button>
+                            <button id="updateEmployeeBtn" class="btn btn-warning">Call</button>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end">
+                            <button id="deleteEmployeeBtn" class="btn btn-danger">Delete</button>
+                        </div>
+                        
+                    </div> <!-- End of modal-footer -->
+                    
+                </div> <!-- End of modal-content -->
+            </div> <!-- End of modal-dialog -->
+        </div> <!-- End of modal -->
+        
 
     
 </body>

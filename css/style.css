@@ -9,6 +9,8 @@
   display: none;
 }
 
+
+
 #login-page
 {
     font-family: 'Mulish', sans-serif;
@@ -79,14 +81,14 @@ a:hover {
     color: #fff;
 }
 
-#loadingOverlay {
+#loading {
     display: none;
     position:fixed;
-    top: 0px;
+    top: 40%;
     left: 0px;
     width: 100%;
     height: 100%;
-    color: white;
+    
     
     align-items: center;
     justify-content:center;
@@ -107,7 +109,7 @@ a:hover {
 }
 
 .employee-card {
-      
+    border-radius: 5px;  
     width: 400px;
     border: 1px solid #ddd;
     overflow: hidden;
@@ -164,7 +166,7 @@ a:hover {
     width: 100%;
   }
 
-  .navbar .navbar-brand {
+  .navbar-brand {
     font-style: italic;
     margin: 5px;
 
